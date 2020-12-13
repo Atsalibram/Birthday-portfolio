@@ -1,4 +1,4 @@
-# README.md
+# Birthday Calculator
 #### This is a project  that calculates the birthday of a user and gives out their Akan names
 #### By Bramuel Amariati
 ## Description
