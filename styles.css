@@ -5,5 +5,8 @@ h3{
     font-style: italic;
 }
 .text{
-    font-size: 30px;
+    font-size: 27px;
+}
+.card{
+    background-color:lightgrey;
 }
