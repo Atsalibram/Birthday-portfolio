@@ -1,5 +1,5 @@
 # README.md
-#### This is a project  that calculates the birtday of a user and gives out their Akan names
+#### This is a project  that calculates the birthday of a user and gives out their Akan names
 #### By Bramuel Amariati
 ## Description
 This is a project to calculate a users birthday and give out their names depending on the day they were born
