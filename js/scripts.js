@@ -1,35 +1,58 @@
-function generateName(date, month, yearOfBirth) {
+var maleName = [" Kwasi", " Kwandwo", " Kwabena", " Kwaku", " Yaw", " Kofi", " Kwame"]
+var femaleName = [" Akosua", " Adwoa", " Abenaa", " Akua", " Yaa", " Afua", " Ama"]
 
-    var century = yearOfBirth.slice(0, 2);
-    var year = yearOfBirth.slice(2, 4);
-    var gender = document. getElementById("gender");
+function getDay() {
 
-    var maleName = ["Kwasi", "Kwadwo", "Kwabena" , "Kwaku" , "Yaw" , "Kofi" , "Kwame"];
-    var femaleName =["Akosua" ,"Adwoa" , "Abenaa" , "Akua" , "Yaa" ,"Afua" ,"Ama"];
-    var dayOfWeek = ["Sunday", "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"];
 
-    var dayOfBirth = (((century / 4) -2 * year - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10)) + date) % 7;
-    var dayOfBirth = Math.floor(dayOfBirth);
+    var year = document.getElementById("year").value;
 
-    if (gender === "Male") {
-    document.getElementById("result").innerHTML = "You were born on a " + dayOfWeek[dayOfBirth - 1] + "your Akan name is" + maleName[dayOfBirth];
-    document.getElementById("date").value = "";
-    document.getElementById("month").value ="";
-    document.getElementById("year").value ="";
-    return false
+    var mm = parseInt(document.getElementById("month").value);
+
+    var day = parseInt(document.getElementById("day").value);
+
+    var gender = document.getElementById("gender").value;
+    
+    var clear =document.getElementById("clear") .reset;
+
+
+    var yy = parseInt(year.substr(2, 4));
+
+
+    var century = parseInt(year.substr(0, 2));
+
+    var date = Math.abs(parseInt(((century / 4) - 2 * century - 1) + ((5 * yy / 4)) + ((26 * (mm + 1) / 10)) + day) % 7)
+
+
+    if (year <= 0 || year == "" || year > 2020) {
+        alert("enter valid year");
     }
-    else if (gender === "Female") { 
-    document.getElementById("result").innerHTML = "You were born on a "  + dayOfWeek -1[dayOfBirth - 1] + "your Akan name is" + femaleName[dayOfBirth];
-    document.getElementById("date").value = "";
-    document.getElementById("month").value ="";
-    document.getElementById("year").value="";
-    return false;
-    }
-}
-function verify() {
-    var date = document.getElementById("date").value;
-    var month = document.getElementById("month").value;
-    var yearOfBirth = document.getElementById("year").value;
-    var newDate =  new Date();
-}
+    if (mm == 2) {
+        if (day == 29) {
+            if (year % 4 != 0 || year % 100 == 0 && year % 400 != 0) {
+                alert("enter valid date");
+                field.value = mm + '/' + '';
+            }
+        } else if (day > 28) {
+            alert("enter valid date");
+            field.value = month + '/' + '';
+        }
+    } else
+    if (mm <= 0 || mm > 12) {
+        alert("enter valid month");
+    } else
+    if (day < 1 || day > 31) {
+        alert("enter valid date");
+        return ;
 
+    };
+
+
+
+    if (gender === "male") {
+        alert("your Akan male name is" + maleName[date]);
+    } else
+    if (gender === "female") {
+        alert("your Akan female name is"  + femaleName[date]);
+    };
+
+};
