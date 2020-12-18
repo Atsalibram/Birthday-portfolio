@@ -12,48 +12,57 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron">
-            <div class="card">
-                <div class="card-body">
-                    <h1>Birthday Calculator</h1>
-                    <P>This is an app that calculates a users age and gives out their Akan names</P>
-                </div>
-            </div>
-                    <div class="card">
-                        <div class="card-body">
-                    <h2>Akan Names</h2>
-                    <p>Akan names are derived from Ghanian culture.</p>
-                    <p>Children are frequently given their first name as the day in the week they were born.</p>
-                    <img src="images/download (7).jpeg" class="img-thumbnail" alt="kids" width="500" height="700">
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body"></div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <p><span class="text">Try it out</p>
-                        <h6>Select Gender</h6>
-                        <div id="birthday">
 
-                            <input type="radio" id="male" name="birthday" value="male">
-                            <label for="male">male</label>
-                            <input type="radio" id="female" name="birthday" value="female">
-                            <label for="female">Female</label>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <label for="date">Day</label>
-                <input type="number" id="date" name="date" placeholders="01" min="1" max="31">
-                <label for="month">Month</label>
-                <input type="number" id="month" name="month" placeholders="02" min="1" max="12">
-                <label for="year">Year</label>
-                <input type="number" id="year" name="year" placeholders="1900" min="1900" max="2030">
-                <br>
-                <br>
-                <input type="submit" value="submit" id="submitButton" class="button" onclick="verify();return false;">
+        <div class="card">
+            <div class="card-body">
+                <h1>Birthday Calculator</h1>
+                <P>This is an app that calculates a users age and gives out their Akan names</P>
             </div>
-            <script src="./js/scripts.js"></script>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h2>Akan Names</h2>
+                <p>Akan names are derived from Ghanian culture</p>
+                <p>Children are frequently given their first name as the day in the week they were born.</p>
+                <img src="images/download (7).jpeg" class="img-thumbnail" alt="kids" width="500" height="700">
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="">Year</label>
+                    <input type="number" class="form-control" id="year" placeholder="1900" min="1900" max="2030">
+                </div>
+                <div class="form-group">
+                    <label for="">Month</label>
+                    <input type="number" class="form-control" id="month" placeholder="1" min="1" max="12">
+                </div>
+                <div class="form-group">
+                    <label for="">day</label>
+                    <input type="number" class="form-control" id="day" placeholder="1" min="1" max="30">
+                </div>
+                <div class="form-group">
+                    <label for="select gender" Gender></label>
+                    <select class="form-control" id="gender">
+                        <option></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <button onclick="getDay()" type="button" class="btn">
+                    submit
+                </button>
+
+                <button onclick="reset()" type="button" value="clear" class="btn" id="clear">
+                    clear
+                </button>
+            </form>
+        </div>
+
+        <script src="./js/scripts.js"></script>
+    </div>
 </body>
 <br>
 <div class="card 3">
